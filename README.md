@@ -60,6 +60,40 @@ npm run electron:dev
 npm run electron:build
 ```
 
+### Android APK (Sideload)
+
+Prerequisites:
+- Android Studio installed
+- Android SDK configured
+- ANDROID_HOME environment variable set
+
+```bash
+# Install dependencies
+npm install
+
+# Build the web app
+npm run build
+
+# Sync with Android
+npx cap sync android
+
+# Open in Android Studio
+npx cap open android
+```
+
+Then in Android Studio:
+1. Go to **Build > Build Bundle(s) / APK(s) > Build APK(s)**
+2. The APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`
+3. Transfer to your phone and install
+
+**Alternatively, build from command line:**
+```bash
+cd android
+./gradlew assembleDebug
+```
+
+The APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`
+
 ## Usage
 
 ### Creating Containers
@@ -110,12 +144,20 @@ The app works in any modern browser and can be installed as a PWA:
 - Click "Install" or "Add to Home Screen"
 - Works offline after initial load
 
-### Android
+### Android (Native APK)
 
+Build the native APK using Capacitor:
+```bash
+npm run build
+npx cap sync android
+cd android && ./gradlew assembleDebug
+```
+The APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`
+
+**Or as PWA:**
 1. Open the app in Chrome
 2. Tap the menu (three dots)
 3. Select "Add to Home Screen"
-4. The app will be available like a native app
 
 ### iOS
 

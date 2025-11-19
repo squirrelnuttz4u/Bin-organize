@@ -31,3 +31,13 @@ dev-dist/
 
 # TypeScript
 *.tsbuildinfo
+
+# Android
+android/app/build/
+android/.gradle/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+*.apk
+*.aab
+*.keystore
+local.properties
