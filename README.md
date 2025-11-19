@@ -94,6 +94,44 @@ cd android
 
 The APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`
 
+### iOS App (Sideload)
+
+Prerequisites:
+- macOS with Xcode installed
+- Apple Developer account (free or paid)
+- CocoaPods installed (`sudo gem install cocoapods`)
+
+```bash
+# Install dependencies
+npm install
+
+# Build the web app
+npm run build
+
+# Sync with iOS
+npx cap sync ios
+
+# Open in Xcode
+npx cap open ios
+```
+
+Then in Xcode:
+1. Select your development team in **Signing & Capabilities**
+2. Connect your iPhone via USB
+3. Select your device as the build target
+4. Click **Product > Run** (or Cmd+R)
+
+**To create an IPA for distribution:**
+1. In Xcode, go to **Product > Archive**
+2. Once archived, click **Distribute App**
+3. Choose **Ad Hoc** or **Development** for sideloading
+4. Export the IPA file
+
+**Install on iPhone:**
+- Use Apple Configurator 2, or
+- Use AltStore, or
+- Drag the IPA to your device in Finder
+
 ## Usage
 
 ### Creating Containers
@@ -159,12 +197,20 @@ The APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`
 2. Tap the menu (three dots)
 3. Select "Add to Home Screen"
 
-### iOS
+### iOS (Native App)
 
+Build the native iOS app using Capacitor:
+```bash
+npm run build
+npx cap sync ios
+npx cap open ios
+```
+Then build in Xcode with your Apple Developer account.
+
+**Or as PWA:**
 1. Open the app in Safari
 2. Tap the Share button
 3. Select "Add to Home Screen"
-4. The app will be available like a native app
 
 ### Windows
 

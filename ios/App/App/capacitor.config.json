@@ -1,0 +1,8 @@
+{
+  "appId": "com.binorganize.app",
+  "appName": "Bin Organize",
+  "webDir": "public",
+  "server": {
+    "iosScheme": "capacitor"
+  }
+}

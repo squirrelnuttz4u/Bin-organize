@@ -41,3 +41,12 @@ android/capacitor-cordova-android-plugins/build/
 *.aab
 *.keystore
 local.properties
+
+# iOS
+ios/App/Pods/
+ios/App/App/public/
+ios/App/build/
+ios/DerivedData/
+*.ipa
+*.xcworkspace
+Podfile.lock
